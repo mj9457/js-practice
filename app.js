@@ -17,6 +17,7 @@ if(isNaN(age) || age < 0) {
     console.log("You can do whatever you want");
 } */
 
+
 /* title에 속한 태그 변경
 const title = document.getElementById("title");
 title.innerText = "Got you!";
@@ -24,7 +25,7 @@ title.innerText = "Got you!";
 console.log(title.id);
 console.log(title.className); */
 
-
+/* js로 html 변경 + event 
 const h1 = document.querySelector("div.hello:first-child h1");
 
 function handleTitleClick() {
@@ -62,4 +63,62 @@ h1.addEventListener("mouseleave",handleMouseLeave);
 window.addEventListener("resize", handleWindowResize);
 window.addEventListener("copy", handleWindowCopy);
 window.addEventListener("offline", handleWindowOffline);
-window.addEventListener("online", handleWindowOnline);
+window.addEventListener("online", handleWindowOnline); */
+
+
+/* h1 클릭시 색상 변경
+const h1 = document.querySelector("div.hello:first-child h1");
+
+function handleTitleClick() {
+    const currentColor = h1.style.color;
+    let newColor;
+    if(currentColor=== "blue") {
+        newColor = "tomato";
+    } else if(h1.style.color === "tomato") {
+        newColor = "yellow";
+    } else {
+        newColor = "blue";
+    }
+    h1.style.color = newColor;
+}
+
+h1.addEventListener("click", handleTitleClick); */
+
+
+/* 클래스 네임 변경 + 애니메이션 효과
+const h1 = document.querySelector("div.hello:first-child h1");
+
+function handleTitleClick() {
+    const clickedClass = "clicked"
+    if(h1.className === clickedClass) {
+        h1.className = "";
+    } else {
+        h1.className = clickedClass;
+    }
+}
+
+h1.addEventListener("click", handleTitleClick); */
+
+
+/* 클레스 네임 변경(classList 사용) 
+const h1 = document.querySelector("div.hello:first-child h1");
+
+function handleTitleClick() {
+    const clickedClass = "clicked"
+    if(h1.classList.contains(clickedClass)) {
+        h1.classList.remove(clickedClass);
+    } else {
+        h1.classList.add(clickedClass);
+    }
+}
+
+h1.addEventListener("click", handleTitleClick) */
+
+/* toggle 사용한 클레스 네임 변경
+const h1 = document.querySelector("div.hello:first-child h1");
+
+function handleTitleClick() {
+    h1.classList.toggle("clicked");
+}
+
+h1.addEventListener("click", handleTitleClick); */
